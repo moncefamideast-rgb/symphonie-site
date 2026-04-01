@@ -57,7 +57,30 @@ body {
 .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
 .small { width: 100%; padding: 11px 14px; }
 .shop-hero { padding: 56px 0 34px; }
-.hero-commerce { display:grid; grid-template-columns: 1.15fr .85fr; gap: 30px; align-items:center; }
+.hero-banner-real {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero-banner-real::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(17,16,15,.72), rgba(17,16,15,.18));
+}
+.hero-commerce {
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 30px;
+  align-items:center;
+  position: relative;
+  z-index: 1;
+}
+.hero-on-image {
+  color: white;
+  padding: 28px 0;
+}
+.hero-on-image p, .hero-on-image .hero-points { color: rgba(255,255,255,.9); }
 .eyebrow,.section-tag {
   display:inline-block; padding: 8px 12px; border-radius: 999px; background: #f1e2ca; color: #7c6130; font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
 }
@@ -91,6 +114,25 @@ body {
   background: linear-gradient(135deg, #1a1613, #43362a); color: white; border-radius: 22px; padding: 26px; box-shadow: var(--shadow);
 }
 .collection-card a { color: #edcf95; text-decoration:none; font-weight:700; }
+.image-card {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap: 14px;
+  text-decoration:none;
+  color:white;
+  overflow:hidden;
+}
+.image-card img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:16px;
+  background:white;
+}
+.image-card span {
+  font-weight:700;
+}
 .product-grid { display:grid; gap: 18px; }
 .shop-grid { grid-template-columns: repeat(3,1fr); }
 .four-grid { grid-template-columns: repeat(4,1fr); }
@@ -99,6 +141,14 @@ body {
   height: 220px; border-radius: 18px; background:
     radial-gradient(circle at top, rgba(255,255,255,.45), transparent 35%),
     linear-gradient(135deg, #241d19, #5c4633 60%, #e9d2ab 100%);
+  margin-bottom: 16px;
+}
+.real-product {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #fff;
   margin-bottom: 16px;
 }
 .badge {
